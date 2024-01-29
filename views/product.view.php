@@ -1,7 +1,7 @@
 <?php 
 
 // J'inclus la page sur laquelle je fais l'appel API pour récupérer les produits
-include "../curl_products.php";
+include "../config/curl_products.php";
 include "../partials/header.php";
 
 // Si dans l'URL on a un paramètre product qui vaut un id alors on crée une variable
@@ -11,9 +11,6 @@ if (isset($_GET['product'])) {
 } 
 
 ?> 
-
-
-
     <h1>Page produit</h1>
 
    <?php foreach($products as $product) : ?>

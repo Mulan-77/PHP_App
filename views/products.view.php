@@ -1,7 +1,7 @@
 <?php 
 
 // J'inclus la page sur laquelle je fais l'appel API pour récupérer les produits
-include "../curl_products.php";
+include "../config/curl_products.php";
 include "../partials/header.php";
 
 ?> 

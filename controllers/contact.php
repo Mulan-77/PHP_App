@@ -1,11 +1,6 @@
-<?php
-require_once '../view/contact.view.php';
-require_once '../config/php_mailer.php';
-require_once '../vendor/autoload.php';
+<?php 
 
-
-
-
+// On utilise la classe PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -34,14 +29,15 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
             //Recipients / On précise les récipients pour le mail 
             $mail->setFrom($email);
-            $mail->addAddress($mail->Username); 
+            $mail->addAddress($mail->Username, 'Romain'); 
             $mail->Subject = $subject;
-            $mail->Body  = $body;   //Add a recipient
+            $mail->Body  = $body;   
 
             // On envoie le mail 
             $mail->send();
             echo 'Message has been sent';
             var_dump('on est bon');
+
 
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
