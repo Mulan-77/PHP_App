@@ -10,24 +10,19 @@ require_once '../vendor/autoload.php';
 ?>
 
 <h1>Page de contact</h1>
+<section>
+    <!-- Notre formulaire de contact avec méthode POST -->
+    <form class="contact-form" method="POST">
+        <label for="email">Email :</label>
+        <input name="email" type="email" placeholder="exemple@gmail.com">
 
-<section id="contact">
+        <label for="subject">Subject : </label>
+        <input name="subject" type="text" placeholder="What is it about ?">
 
- <form action="">
-    <div id="message">
-        
-        <label for="email">Email</label>
-        <input type="email" name="email" type="email" placeholder="example@gmail.com" required>
+        <label for="body">Message :</label>
+        <textarea name="body" cols="30" rows="10" placeholder="Tell me more..."></textarea>
 
-        <label for="subject">Subject</label>
-        <input type="subject" name="subject" type="text" placeholder="What is it about" required>
-
-        <label for="message">Your message</label>
-        <textarea id="name" cols="30" rows="10" placeholder="Write something.."></textarea>
-
-    
-        <input class=submit type="submit" value="Submit">
-    </div>
+        <input class="submit" name="submit" type="submit">
     </form>
 </section>
 
@@ -39,5 +34,6 @@ require_once '../vendor/autoload.php';
 <?php
 
 require_once '../controllers/contact.php';
+include "../partials/footer.php";
 
-include "../partials/footer.php"; ?>
+?>
