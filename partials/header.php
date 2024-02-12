@@ -32,29 +32,29 @@ $cleanUri === 'index.php' ? $path = 'views/' : $path = '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon PHP eShop</title>
-    <link rel="stylesheet" href="<?= $path ?>style/tamere.css">
-    <script src="<?= $path ?>/views/scripts/app.js" defer></script>
+    <link rel="stylesheet" href="style/tamere.css">
+    <script src="/views/scripts/app.js" defer></script>
 </head>
 <body>
 
     <nav>
         <ul>
-            <!-- <img class="burger" src="<?= $path ?>../assets/icons/menu.png"> -->
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="<?= $path ?>contact.view.php">Contact</a></li>
+            <!-- <img class="burger" src="../assets/icons/menu.png"> -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
 
             <?php if (isset ($_SESSION ['user']) && $_SESSION ['user']['logged']) :  ?> 
 
-                <li><a href="<?= $path ?>products.view.php">Products</a></li>
-                <li><a href="<?= $path ?>cart.view.php">Cart</a></li>
-                <li><a href="<?= $path ?>profile.view.php">Profil</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/profile">Profil</a></li>
                 
-                <li><a href="<?= $path ?>logout.php">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             
             <?php else : ?>
 
-                <li><a href="<?= $path ?>signup.view.php">Signup</a></li>
-                <li><a href="<?= $path ?>login.view.php">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
             
             <?php endif ?>
         </ul>

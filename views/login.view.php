@@ -11,8 +11,8 @@
 
 ob_start();
 
-include "../partials/header.php";
-include "../config/db_config.php";
+include "partials/header.php";
+include "config/db_config.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $email = $_POST['email'];
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $_SESSION['user']['logged'] = true;
             
             // On redirige vers une page home ou profile
-            header('Location: profile.view.php');
+            header('Location: profile');
             ob_end_flush();
         } else {
             $error = "Le mot de passe n'est pas le bon";
@@ -67,6 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 <?php 
 
-include "../partials/footer.php";
+include "partials/footer.php";
 
 ?>

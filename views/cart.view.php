@@ -2,8 +2,8 @@
 
 
 // J'inclus la page sur laquelle je fais l'appel API pour récupérer les produits
-include "../config/curl_products.php";
-include "../partials/header.php";
+include "config/curl_products.php";
+include "partials/header.php";
 
 // Si dans l'URL on a un paramètre product qui vaut un id alors on crée une variable
 // product_id contenant le fameux id
@@ -40,7 +40,7 @@ if (isset($_GET['product'])) {
             <p class="description"><?= substr($item['description'], 1, 50) ?> ...</p>
 
             <!-- Ici on veut avec unset supprimer l'élément du panier via son id -->
-            <a class="delete" href="delete-product.php?delete=<?= $item['id'] ?>">Supprimer</a>
+            <a class="delete" href="delete-product?delete=<?= $item['id'] ?>">Supprimer</a>
 
         <?php endforeach ?>
         <?php else : ?>
@@ -49,7 +49,7 @@ if (isset($_GET['product'])) {
         <?php endif  ?>
 
         <!-- Lien vers la page de checkout / paiement -->
-        <a class="checkout" href="checkout.view.php">Allez au checkout</a>
+        <a class="checkout" href="checkout">Allez au checkout</a>
     </div>
     <!-- On vient récupérer l'id du produit que l'on veut ajouter au panier
     On l'ajoute ensuite à la session au niveau de la clé cart  -->
@@ -59,4 +59,4 @@ if (isset($_GET['product'])) {
 
 
 
-<?php include "../partials/footer.php"; ?>
+<?php include "partials/footer.php"; ?>

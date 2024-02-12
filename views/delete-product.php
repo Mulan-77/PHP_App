@@ -9,7 +9,7 @@ if (isset($_GET['delete'])) {
     $product_id = $_GET['delete'];
 
     unset($_SESSION['user']['cart'][$product_id]);
-    header('Location: cart.view.php');
+    header('Location: cart');
     // var_dump($_SESSION);
 } 
 
